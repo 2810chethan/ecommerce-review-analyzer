@@ -3,10 +3,10 @@ from typing import Optional
 import sqlite3
 import os
 
-try:
-    from app.database import get_db_connection
-except ImportError:
-    from database import get_db_connection
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from database import get_db_connection
 
 class GoogleLoginRequest(BaseModel):
     token: str

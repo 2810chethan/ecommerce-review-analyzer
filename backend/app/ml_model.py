@@ -8,10 +8,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 
 # Try to relative import, fallback to absolute import for main runner
-try:
-    from app.database import get_db_connection, clean_text
-except ImportError:
-    from database import get_db_connection, clean_text
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from database import get_db_connection, clean_text
 
 MODEL_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "models"))
 VECTORIZER_PATH = os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl")

@@ -2,10 +2,10 @@ import sqlite3
 import os
 import re
 
-try:
-    from app.database import DB_PATH
-except ImportError:
-    from database import DB_PATH
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from database import DB_PATH
 
 def execute_select_query(query: str):
     """Executes a SQL SELECT query against reviews.db safely."""

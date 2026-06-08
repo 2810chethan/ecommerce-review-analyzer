@@ -4,18 +4,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
 
-try:
-    from app.database import get_db_connection, init_db, load_data, clean_text
-    from app.ml_model import predict_sentiment, train_model, update_all_predictions
-    from app.sql_executor import execute_select_query
-    from app.chatbot import process_chat_message
-    from app.auth import GoogleLoginRequest, verify_google_token, RegisterRequest, LoginRequest, register_user, login_user
-except ImportError:
-    from database import get_db_connection, init_db, load_data, clean_text
-    from ml_model import predict_sentiment, train_model, update_all_predictions
-    from sql_executor import execute_select_query
-    from chatbot import process_chat_message
-    from auth import GoogleLoginRequest, verify_google_token, RegisterRequest, LoginRequest, register_user, login_user
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from database import get_db_connection, init_db, load_data, clean_text
+from ml_model import predict_sentiment, train_model, update_all_predictions
+from sql_executor import execute_select_query
+from chatbot import process_chat_message
+from auth import GoogleLoginRequest, verify_google_token, RegisterRequest, LoginRequest, register_user, login_user
 
 app = FastAPI(
     title="E-commerce Product Review Analyzer API",

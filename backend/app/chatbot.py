@@ -2,12 +2,11 @@ import re
 import sqlite3
 import os
 
-try:
-    from app.database import DB_PATH, get_db_connection
-    from app.ml_model import predict_sentiment
-except ImportError:
-    from database import DB_PATH, get_db_connection
-    from ml_model import predict_sentiment
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from database import DB_PATH, get_db_connection
+from ml_model import predict_sentiment
 
 def query_db_scalar(query, params=()):
     try:
