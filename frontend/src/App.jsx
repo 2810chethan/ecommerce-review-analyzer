@@ -40,7 +40,7 @@ const teamMembers = [
 // === DEPLOYMENT CONFIGURATIONS ===
 // Replace these URLs after deploying your backend on Render and Streamlit app on Streamlit Cloud
 const DEPLOYED_BACKEND_URL = "https://ecommerce-review-analyzer-backend.onrender.com";
-const DEPLOYED_STREAMLIT_URL = "https://ecommerce-analyzer.streamlit.app";
+const DEPLOYED_STREAMLIT_URL = "https://2810chethan-ecommerce-review-analyzer-streamlitapp-zsw3gc.streamlit.app/";
 
 // Override global fetch to automatically prepend backend URL in production
 const originalFetch = window.fetch;
