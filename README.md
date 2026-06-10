@@ -1,6 +1,6 @@
 # E-commerce Product Review Analyzer
 
-A full-stack, machine learning-powered **E-commerce Product Review Analyzer** featuring a React frontend, FastAPI backend, SQLite database, and an interactive Streamlit dashboard. 
+A full-stack, machine learning & data science-powered **E-commerce Product Review Analyzer** featuring a React frontend, FastAPI backend, SQLite database, and an interactive Streamlit dashboard. 
 
 This project simulates a real-world analytics platform where customer reviews are ingested, processed, classified using a sentiment classifier (TF-IDF + Logistic Regression), and analyzed using SQL and conversational chatbot interfaces.
 
@@ -124,4 +124,4 @@ streamlit run streamlit/app.py
 ## 📊 ML Model Details
 * **Features**: TF-IDF (Term Frequency-Inverse Document Frequency) capturing unigrams and bigrams.
 * **Classifier**: Logistic Regression with balanced class weights.
-* **Accuracy**: 100% test accuracy on mock dataset classes.
+* **Accuracy**: 93% test accuracy on mock dataset classes.
